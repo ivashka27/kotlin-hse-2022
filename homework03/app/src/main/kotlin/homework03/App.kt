@@ -13,7 +13,7 @@ class App {
         }
 }
 
-suspend fun main(args: Array<String>) = runBlocking {
+suspend fun main(args: Array<String>) = runBlocking(Dispatshers.IO) {
     val redditClient = RedditClient()
     for (title in args) {
         redditClient.parse(title, "/Users/Иван/Desktop")
